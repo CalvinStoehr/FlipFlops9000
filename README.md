@@ -4,11 +4,11 @@ Working on the soon-to-be mobile game, Flip Flops 9000!
 ### CSCI 3308 Project Proposal
 
 ##### Members
-Collin Dornbos
-Jeffrey Everett
-Preston Kelley
-Julio Lemos
-Nhan Nguyen
+Collin Dornbos,
+Jeffrey Everett,
+Preston Kelley,
+Julio Lemos,
+Nhan Nguyen,
 Calvin Stoehr
 
 ##### Project Description
