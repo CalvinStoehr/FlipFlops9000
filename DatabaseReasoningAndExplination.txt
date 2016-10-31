@@ -1,0 +1,8 @@
+The database we chose was MySQL because we were all familiar with it and we do not anticipate the need for massive databases in this project.
+Tables:
+-UserData
+	-Contains data pertaining to the user's numerical user ID, username, password, the platform they are on and the date they joined.
+-userStats
+	-Contains the user's data from playing the game, like total distance run and the number of boss encounters and victories.
+-BossData
+	-Contains the user's boss record, the number of encounters and wins for each boss that we implement. This database will expand as more bosses are added.
