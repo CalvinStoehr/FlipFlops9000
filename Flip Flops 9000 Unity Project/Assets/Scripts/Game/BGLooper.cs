@@ -22,7 +22,7 @@ public class BGLooper : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (playerScript.m_Dead)
+		if (playerScript)
 			this.enabled = false;
 		
         offset.x += speed * Time.deltaTime;
