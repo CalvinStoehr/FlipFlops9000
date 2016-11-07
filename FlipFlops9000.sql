@@ -1,11 +1,10 @@
 CREATE DATABASE FlipFlops;
 USE FlipFlops;
-CREATE TABLE UserData(userid float, username char(30), password char(30), datejoined date, devicetype char(10));
-PRIMARY KEY ('userId');
+CREATE TABLE UserData(userid float, username char(30), password char(30), datejoined date, devicetype char(10), PRIMARY KEY(userid));
 INSERT INTO UserData VALUES (1, 'differentstate4', 'password123', '2016-10-30', 'ios');
 INSERT INTO UserData VALUES (2, 'redhouse91', 'qwertyuiop', '2016-10-31', 'android');
 INSERT INTO UserData VALUES (3, 'longstudent16', 'qazwsxedcr', '2016-11-2', 'ios');
-INSERT INTO UserData VALUES (4, 'littlegroup24', 'asdfghjkl', '2017-1-5', 2, 'pc');
+INSERT INTO UserData VALUES (4, 'littlegroup24', 'asdfghjkl', '2017-15-2', 'pc');
 INSERT INTO UserData VALUES (5, 'importantcountry29', 'il!kefr33dom', '1776-7-4', 'eagle'); 
 
 
