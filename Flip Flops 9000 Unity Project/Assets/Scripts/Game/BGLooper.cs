@@ -22,8 +22,8 @@ public class BGLooper : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (playerScript)
-			this.enabled = false;
+		//if (playerScript)
+		//	this.enabled = false;
 		
         offset.x += speed * Time.deltaTime;
         mat.SetTextureOffset("_MainTex", offset);
