@@ -36,9 +36,9 @@ public class Platformer2DUserControl : MonoBehaviour
         // Pass all parameters to the character control script.
 		character.Move (jump);
 		jump = false;
-
-		if (switchGravity) {
-			Physics2D.gravity = -Physics2D.gravity;
+		//swithces gravity and checks if grounded and if it should rotate since it only rotates when it should switch gravity
+		bool shouldRotate = character.SwitchGravity (switchGravity);
+		if (shouldRotate) {
 			character.StartRotation ();
 		}
 

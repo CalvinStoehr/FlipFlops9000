@@ -101,6 +101,18 @@ public class PlatformerCharacter2D : MonoBehaviour
 
         }
     }
+	public bool SwitchGravity(bool shouldSwitch)
+	{
+		bool shouldRotate = false;
+		if (isGrounded && shouldSwitch) {
+			isGrounded = false;
+			anim.SetBool("Ground", false);
+			Physics2D.gravity = -Physics2D.gravity;
+			shouldRotate = true;
+		}
+
+		return shouldRotate;
+	}
 
 	public void StartRotation()
 	{
