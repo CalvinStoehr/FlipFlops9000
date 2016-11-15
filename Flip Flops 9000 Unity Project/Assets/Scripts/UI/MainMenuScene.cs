@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class MenuControl : MonoBehaviour
+public class MainMenuScene : MonoBehaviour
 {
-	public void ChangeSceneButton(int newScene)
+	public void ChangeSceneButton(string newScene)
 	{
 		SceneManager.LoadScene (newScene);
 	}

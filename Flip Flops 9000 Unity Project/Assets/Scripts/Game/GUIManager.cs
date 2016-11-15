@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Linq;
 
 public class GUIManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GUIManager : MonoBehaviour
 	[SerializeField] private Text deathScoreText;
 	[SerializeField] private Button restartButton;
 	[SerializeField] private Button mainMenuButton;
+
+	private string sendScoreURL = "http://104.236.29.208/flipflops/add_run.php";
 
 	private bool showDeathMenu;
 
@@ -44,6 +47,23 @@ public class GUIManager : MonoBehaviour
 		deathScoreText.text = "Score: " + Mathf.Round (levelManager.score);
 
 		showDeathMenu = true;
+
+		if (SessionInfo.cookies.ContainsKey("PHPSESSID"))
+			StartCoroutine (SendScore ());
+	}
+
+	IEnumerator SendScore()
+	{
+		WWWForm form = new WWWForm();
+		form.AddField ("score", Mathf.Round (levelManager.score).ToString());
+
+		WWW www = new WWW (sendScoreURL, form.data, UnityCookies.GetCookieRequestHeader(SessionInfo.cookies));
+		yield return www;
+
+		if (www.text == "Send successful.")
+			Debug.Log ("YAYY");
+		else
+			Debug.Log (www.text);
 	}
 
 	void OnGUI()
