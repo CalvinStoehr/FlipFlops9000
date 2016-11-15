@@ -23,8 +23,8 @@ public class PlatformerCharacter2D : MonoBehaviour
     private Animator anim;            // Reference to the player's animator component.
     private Rigidbody2D playerRigidbody;
 	private float rotateTarget = 0;
-
-	void OnTriggerEnter2D(Collider2D other)
+   
+    void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Obstacle") {
 			anim.SetBool ("Hit", true);
@@ -101,6 +101,18 @@ public class PlatformerCharacter2D : MonoBehaviour
 
         }
     }
+	public bool SwitchGravity(bool shouldSwitch)
+	{
+		bool shouldRotate = false;
+		if (isGrounded && shouldSwitch) {
+			isGrounded = false;
+			anim.SetBool("Ground", false);
+			Physics2D.gravity = -Physics2D.gravity;
+			shouldRotate = true;
+		}
+
+		return shouldRotate;
+	}
 
 	public void StartRotation()
 	{
