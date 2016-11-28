@@ -28,6 +28,13 @@ public class RegisterScene : MonoBehaviour
 
 		if (www.text == "Registration successful.") {
 			SessionInfo.cookies = UnityCookies.ParseCookies (www);
+			Debug.Log ("HERE1");
+
+			if (SessionInfo.cookies.ContainsKey ("auth_cookie")) {
+				PlayerPrefs.SetString ("auth_cookie", SessionInfo.cookies ["auth_cookie"]);
+				PlayerPrefs.SetString ("username", username);
+			}
+			Debug.Log ("HERE2");
 			SceneManager.LoadScene ("mainmenu");
 		} else {
 			errorText.text = www.text;

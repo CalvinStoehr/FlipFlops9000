@@ -28,6 +28,11 @@ public class LoginScene : MonoBehaviour
 
 		if (www.text == "Login successful.") {
 			SessionInfo.cookies = UnityCookies.ParseCookies (www);
+
+			if (SessionInfo.cookies.ContainsKey ("auth_cookie")) {
+				PlayerPrefs.SetString ("auth_cookie", SessionInfo.cookies ["auth_cookie"]);
+				PlayerPrefs.SetString ("username", username);
+			}
 			SceneManager.LoadScene ("mainmenu");
 		} else {
 			errorText.text = www.text;
