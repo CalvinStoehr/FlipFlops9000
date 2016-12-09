@@ -170,7 +170,7 @@ GameObject:
   - 114: {fileID: 133476140}
   - 114: {fileID: 133476139}
   m_Layer: 5
-  m_Name: SettingsButton
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,8 +235,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 787307898}
-        m_MethodName: ChangeSceneButton
-        m_Mode: 5
+        m_MethodName: ExitGameButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1437,7 +1437,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: Exit
 --- !u!222 &1483203950
 CanvasRenderer:
   m_ObjectHideFlags: 0
