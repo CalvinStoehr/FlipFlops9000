@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 	[SerializeField] private float scoreMultiplier = 5f;
 
 	public float score;
-	
+
 	// Update is called once per frame
 	void Update ()
 	{

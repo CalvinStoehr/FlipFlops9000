@@ -23,13 +23,13 @@ public class PlatformerCharacter2D : MonoBehaviour
     private Animator anim;            // Reference to the player's animator component.
     private Rigidbody2D playerRigidbody;
 	private float rotateTarget = 0;
-   
+
     void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Obstacle") {
 			anim.SetBool ("Hit", true);
 			isDead = true;
-
+      
 			levelManager.StopMoving ();
 			guiManager.ShowDeathMenu ();
 
@@ -45,7 +45,7 @@ public class PlatformerCharacter2D : MonoBehaviour
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody2D>();
     }
-		
+
 
 	void Start()
 	{
